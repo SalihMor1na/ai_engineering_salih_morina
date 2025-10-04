@@ -13,10 +13,10 @@ class IrisData:
 # request/response schemas
 
 class IrisInput(BaseModel):
-    SepalLengthCm: float = Field()
-    SepalWidthCm: float = Field()
-    PetalLengthCm: float = Field()
-    PetalWidthCm: float = Field()
+    SepalLengthCm: float = Field(gt = 4, lt = 8.2)
+    SepalWidthCm: float = Field(gt = 1.7, lt = 4.8)
+    PetalLengthCm: float = Field(gt = 0.8, lt = 7.1)
+    PetalWidthCm: float = Field(gt = 0.05, lt = 2.7)
 
 class PredictionOutput(BaseModel):
     predicted_flower: str
